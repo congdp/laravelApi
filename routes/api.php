@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Posts;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,6 +14,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+// Route::get('posts', 'PostController@index');
+// Route::get('posts/{id}', 'PostController@show');
+// Route::post('posts', 'PostController@store');
+// Route::put('posts/{id}', 'PostController@update');
+// Route::delete('posts/{id}', 'PostController@delete');
+// Route::get('posts/search/{title}', 'PostController@search');
+
+Route::get('blogs', 'BlogController@index');
+Route::get('blogs/{id}', 'BlogController@show');
+Route::post('blogs', 'BlogController@store');
+Route::put('blogs/{id}', 'BlogController@update');
+Route::delete('blogs/{id}', 'BlogController@delete');
+Route::get('blogs', 'BlogController@search');
+

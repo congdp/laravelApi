@@ -4,23 +4,23 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Posts extends Model
+class Blog extends Model
 {
     //
     public $timestamps = true;
     protected $fillable = [
         'title',
-        'description',
+        'des',
         'detail',
         'thumbs',
-        'category_id',
+        'category',
         'position',
-        'status',
+        'public',
         'data_pubblic',
     ];
     protected $casts = [
         'position' => 'array',
     ];
     protected $primaryKey = 'id';
-    protected $table = 'posts';
+    protected $table = 'blogs';
 }
