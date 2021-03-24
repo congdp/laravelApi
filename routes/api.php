@@ -30,5 +30,5 @@ Route::get('blogs/{id}', 'BlogController@show');
 Route::post('blogs', 'BlogController@store');
 Route::put('blogs/{id}', 'BlogController@update');
 Route::delete('blogs/{id}', 'BlogController@delete');
-Route::get('blogs', 'BlogController@search');
+Route::get('blog', 'BlogController@search');
 

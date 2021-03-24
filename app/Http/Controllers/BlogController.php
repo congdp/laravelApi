@@ -14,8 +14,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $blogs = Blog::all();
-        return response()->json($blogs, 200);
+        return Blog::paginate(2);
     }
 
     /**
@@ -29,17 +28,17 @@ class BlogController extends Controller
     }
 
     /**
-     * Get blog by id
+     * Get blogs by title
      * @param string $title
      */
     public function search(Request $request)
     {
-        $query = Blog::select('*');
-        if(isset($request->title)) {
-            $query->where('title','like','%'. $request->title .'%');
-        }
-        return $query->get();
-        // return Blog::where('title', 'LIKE', '%'  .$request->title . '%')->get();
+        // $query = Blog::select('*');
+        // if(isset($request->title)) {
+        //     $query->where('title','like','%'. $request->title .'%');
+        // }
+        // return $query->get();
+        return Blog::where('title', 'LIKE', '%'  . $request->title . '%')->get();
     }
 
     /**
